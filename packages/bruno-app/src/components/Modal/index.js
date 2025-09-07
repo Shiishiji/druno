@@ -9,14 +9,14 @@ const ModalHeader = ({ title, handleCancel, customHeader, hideClose }) => (
   <div className="bruno-modal-header">
     {customHeader ? customHeader : <>{title ? <div className="bruno-modal-header-title">{title}</div> : null}</>}
     {handleCancel && !hideClose ? (
-      <div className="close cursor-pointer" onClick={handleCancel ? () => handleCancel() : null}>
+      <div className="close cursor-pointer" onClick={handleCancel ? () => handleCancel() : null} data-test-id="modal-close-button">
         ×
       </div>
     ) : null}
   </div>
 );
 
-const ModalContent = ({ children }) => <div className="bruno-modal-content px-4 py-6">{children}</div>;
+const ModalContent = ({ children }) => <div className="bruno-modal-content px-4 py-4">{children}</div>;
 
 const ModalFooter = ({
   confirmText,
